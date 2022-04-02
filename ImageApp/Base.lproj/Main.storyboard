@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image Selection View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ImageSelectionViewController" customModule="ImageApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boP-aS-zeY">
+                                <rect key="frame" x="300" y="1216" width="424" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="iaX-yY-r3O">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                    </constraint>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Select Image"/>
+                                <connections>
+                                    <action selector="selectImageAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RPm-Rl-Y9E"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nosign" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aMp-Te-SEj">
+                                <rect key="frame" x="20" y="100.5" width="984" height="995"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="u7C-YQ-FYm">
+                                <rect key="frame" x="300" y="1116" width="424" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXH-hC-mLH">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="rotate.left" catalog="system"/>
+                                        <connections>
+                                            <action selector="rotateLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dZi-9X-9hU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iej-cF-JDC">
+                                        <rect key="frame" x="108" y="0.0" width="100" height="80"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="doc" catalog="system"/>
+                                        <connections>
+                                            <segue destination="SD6-5g-Zyq" kind="popoverPresentation" popoverAnchorView="iej-cF-JDC" id="42h-Yp-8v1">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPi-5S-PEu">
+                                        <rect key="frame" x="216" y="0.0" width="100" height="80"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="rotate.right" catalog="system"/>
+                                        <connections>
+                                            <action selector="rotateRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2la-C6-nBk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcB-jp-8r5">
+                                        <rect key="frame" x="324" y="0.0" width="100" height="80"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="crop" catalog="system"/>
+                                        <connections>
+                                            <action selector="cropImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W3R-Yh-cTe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6Yg-P7-aZl">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=regular" spacingType="standard"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQB-EB-WfY">
+                                <rect key="frame" x="914" y="33" width="24" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="boP-aS-zeY" secondAttribute="bottom" constant="100" id="0Fm-gN-ozg">
+                                <variation key="heightClass=compact-widthClass=regular" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="aMp-Te-SEj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="4p9-XU-nJc">
+                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="aMp-Te-SEj" secondAttribute="trailing" constant="20" id="69o-if-wTb">
+                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="u7C-YQ-FYm" secondAttribute="trailing" constant="60" id="7Ku-CZ-HcL">
+                                <variation key="heightClass=regular-widthClass=regular" constant="300"/>
+                            </constraint>
+                            <constraint firstItem="boP-aS-zeY" firstAttribute="top" secondItem="u7C-YQ-FYm" secondAttribute="bottom" constant="20" id="D4O-pF-zxd"/>
+                            <constraint firstItem="u7C-YQ-FYm" firstAttribute="top" secondItem="aMp-Te-SEj" secondAttribute="bottom" constant="20" id="DYP-OM-tJ4"/>
+                            <constraint firstAttribute="trailing" secondItem="boP-aS-zeY" secondAttribute="trailing" constant="100" id="cJ8-aq-H8X">
+                                <variation key="heightClass=compact-widthClass=regular" constant="244"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="300"/>
+                            </constraint>
+                            <constraint firstItem="aMp-Te-SEj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="d19-B8-GUg">
+                                <variation key="heightClass=compact-widthClass=regular" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="u7C-YQ-FYm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="kEx-QP-AxJ">
+                                <variation key="heightClass=regular-widthClass=regular" constant="300"/>
+                            </constraint>
+                            <constraint firstItem="boP-aS-zeY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="lTH-rg-HAm">
+                                <variation key="heightClass=compact-widthClass=regular" constant="244"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="300"/>
+                            </constraint>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imagePicker" destination="aMp-Te-SEj" id="gEe-ju-8EB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.037383177570092" y="65.442764578833703"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="3eJ-Ie-9h3">
+            <objects>
+                <viewController id="SD6-5g-Zyq" customClass="EXIFDetailsViewController" customModule="ImageApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ua8-Kx-oJB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="680"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="FMZ-t3-iNR">
+                                <rect key="frame" x="80" y="90" width="215" height="500"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAI-fa-Yrc">
+                                        <rect key="frame" x="0.0" y="0.0" width="215" height="234"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22v-OV-ugp">
+                                        <rect key="frame" x="0.0" y="266" width="215" height="234"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="18S-L6-jFn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FMZ-t3-iNR" firstAttribute="leading" secondItem="Ua8-Kx-oJB" secondAttribute="leading" constant="80" id="0H9-dD-guz"/>
+                            <constraint firstAttribute="trailing" secondItem="FMZ-t3-iNR" secondAttribute="trailing" constant="80" id="AM4-Bk-wXA"/>
+                            <constraint firstItem="FMZ-t3-iNR" firstAttribute="top" secondItem="Ua8-Kx-oJB" secondAttribute="top" constant="90" id="IZE-UJ-ONC"/>
+                            <constraint firstAttribute="bottom" secondItem="FMZ-t3-iNR" secondAttribute="bottom" constant="90" id="NuM-ni-Wxh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="TAI-fa-Yrc" id="6E0-Z3-Uci"/>
+                        <outlet property="locationLabel" destination="22v-OV-ugp" id="fo9-25-uvH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bpv-fe-ldh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="682.6171875" y="64.568081991215223"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="crop" catalog="system" width="128" height="116"/>
+        <image name="doc" catalog="system" width="115" height="128"/>
+        <image name="nosign" catalog="system" width="128" height="121"/>
+        <image name="rotate.left" catalog="system" width="118" height="128"/>
+        <image name="rotate.right" catalog="system" width="118" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
